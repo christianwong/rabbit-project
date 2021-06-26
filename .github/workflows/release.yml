@@ -7,22 +7,62 @@ on:
   # workflow_dispatch:
 
 jobs:
-  deploy-release:
 
-    name: Deploy Release
+  polite-module:
+
+    name: Polite Module
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
     steps:
-
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
-          repository: christianwong/${{ secrets.SAMPLE_REPO }}
+          repository: christianwong/${{ secrets.REPO_POLITE }}
           ref: main
           token: ${{ secrets.TOKEN }}
-
-      - name: Create Release on SAMPLE_REPO
+      - name: Create Release
         run: |
           gh release create -p ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions."
+
+
+  alfredus-module:
+
+    name: Alfredus Module
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          repository: christianwong/${{ secrets.REPO_ALFREDUS }}
+          ref: main
+          token: ${{ secrets.TOKEN }}
+      - name: Create Release
+        run: |
+          gh release create -p ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions."
+
+
+
+  delivery-module:
+
+    name: Delivery Module
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          repository: christianwong/${{ secrets.REPO_DELIVERY }}
+          ref: main
+          token: ${{ secrets.TOKEN }}
+      - name: Create Release
+        run: |
+          gh release create -p ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions."
+
+
