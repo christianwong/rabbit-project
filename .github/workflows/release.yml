@@ -11,6 +11,8 @@ jobs:
 
     name: Deploy Release
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
     steps:
 
