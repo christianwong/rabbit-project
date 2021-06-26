@@ -23,5 +23,6 @@ jobs:
 
       - name: Create Release on SAMPLE_REPO
         run: |
+          ls
           cd ${{ secrets.SAMPLE_REPO }}
           gh release create v0.1
