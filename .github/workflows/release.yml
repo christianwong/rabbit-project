@@ -21,6 +21,5 @@ jobs:
 
       - name: Create Release on SAMPLE_REPO
         run: |
-#           git clone https://github.com/christianwong/${{ secrets.SAMPLE_REPO }}.git
           cd ${{ secrets.SAMPLE_REPO }}
           gh release create v0.1
