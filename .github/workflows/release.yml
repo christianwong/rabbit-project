@@ -46,7 +46,6 @@ jobs:
           gh release create -p ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions."
 
 
-
   delivery-module:
 
     name: Delivery Module
@@ -64,5 +63,4 @@ jobs:
       - name: Create Release
         run: |
           gh release create -p ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions."
-
 
