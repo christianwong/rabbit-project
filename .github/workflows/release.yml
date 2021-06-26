@@ -19,6 +19,7 @@ jobs:
         with:
           repository: christianwong/${{ secrets.SAMPLE_REPO }}
           ref: main
+          token: ${{ secrets.TOKEN }}
 
       - name: Create Release on SAMPLE_REPO
         run: |
