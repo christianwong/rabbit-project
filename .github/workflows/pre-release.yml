@@ -24,7 +24,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Create Release
         run: |
-          echo gh release create --prerelease ${{ github.event.release.tag_name }} --notes "${{ github.event.release.body }}" --title "${{ github.event.release.name }} by ${{ github.event.release.author.login }}"
+          gh release create --prerelease ${{ github.event.release.tag_name }} --notes "${{ github.event.release.body }}" --title "${{ github.event.release.name }} by ${{ github.event.release.author.login }}"
 
 
 #   alfredus-module:
