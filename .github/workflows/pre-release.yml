@@ -24,32 +24,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Create Release
         run: |
-          echo ${{ github.event.release.tag_name }}
-          echo ${{ github.event.release.author.login }}
-          echo ${{ github.event.release.body }}
-          echo ${{ github.event.release.name }}
-          echo ${{ github.event.release.id }}
           echo gh release create --prerelease ${{ github.event.release.tag_name }} --notes "${{ github.event.release.body }}" --title "${{ github.event.release.name }} by ${{ github.event.release.author.login }}"
-          echo gh release create --prerelease ${{ github.event.release.tag_name }} --notes '${{ github.event.release.body }}' --title '${{ github.event.release.name }} by ${{ github.event.release.author.login }}'
-
-
-#   polite-module:
-
-#     name: Polite Module
-#     runs-on: ubuntu-latest
-#     env:
-#       GITHUB_TOKEN: ${{ secrets.TOKEN }}
-
-#     steps:
-#       - name: Checkout Repo
-#         uses: actions/checkout@v2
-#         with:
-#           repository: christianwong/${{ secrets.REPO_POLITE }}
-#           ref: main
-#           token: ${{ secrets.TOKEN }}
-#       - name: Create Release
-#         run: |
-#           gh release create --prerelease ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Pre-release"
 
 
 #   alfredus-module:
