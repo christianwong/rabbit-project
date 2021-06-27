@@ -24,43 +24,66 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Create Release
         run: |
-          gh release create --prerelease ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Pre-release"
+          echo ${{ github.event.release.tag_name }}
+          echo ${{ github.event.release.author.login }}
+          echo ${{ github.event.release.body }}
+          echo ${{ github.event.release.name }}
+          echo ${{ github.event.release.id }}
 
 
-  alfredus-module:
+#   polite-module:
 
-    name: Alfredus Module
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.TOKEN }}
+#     name: Polite Module
+#     runs-on: ubuntu-latest
+#     env:
+#       GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-        with:
-          repository: christianwong/${{ secrets.REPO_ALFREDUS }}
-          ref: main
-          token: ${{ secrets.TOKEN }}
-      - name: Create Release
-        run: |
-          gh release create --prerelease ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Pre-release"
+#     steps:
+#       - name: Checkout Repo
+#         uses: actions/checkout@v2
+#         with:
+#           repository: christianwong/${{ secrets.REPO_POLITE }}
+#           ref: main
+#           token: ${{ secrets.TOKEN }}
+#       - name: Create Release
+#         run: |
+#           gh release create --prerelease ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Pre-release"
 
 
-  delivery-module:
+#   alfredus-module:
 
-    name: Delivery Module
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.TOKEN }}
+#     name: Alfredus Module
+#     runs-on: ubuntu-latest
+#     env:
+#       GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-        with:
-          repository: christianwong/${{ secrets.REPO_DELIVERY }}
-          ref: main
-          token: ${{ secrets.TOKEN }}
-      - name: Create Release
-        run: |
-          gh release create --prerelease ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Pre-release"
+#     steps:
+#       - name: Checkout Repo
+#         uses: actions/checkout@v2
+#         with:
+#           repository: christianwong/${{ secrets.REPO_ALFREDUS }}
+#           ref: main
+#           token: ${{ secrets.TOKEN }}
+#       - name: Create Release
+#         run: |
+#           gh release create --prerelease ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Pre-release"
+
+
+#   delivery-module:
+
+#     name: Delivery Module
+#     runs-on: ubuntu-latest
+#     env:
+#       GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+#     steps:
+#       - name: Checkout Repo
+#         uses: actions/checkout@v2
+#         with:
+#           repository: christianwong/${{ secrets.REPO_DELIVERY }}
+#           ref: main
+#           token: ${{ secrets.TOKEN }}
+#       - name: Create Release
+#         run: |
+#           gh release create --prerelease ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Pre-release"
 
