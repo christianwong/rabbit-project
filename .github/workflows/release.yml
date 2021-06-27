@@ -3,8 +3,6 @@ name: Release
 on:
   release:
     types: [released]
-  # Allows you to run this workflow manually from the Actions tab
-  # workflow_dispatch:
 
 jobs:
 
@@ -24,7 +22,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Create Release
         run: |
-          gh release create ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Release"
+          gh release create ${{ github.event.release.tag_name }} --notes "${{ github.event.release.body }}" --title "${{ github.event.release.name }} by ${{ github.event.release.author.login }}"
 
 
   alfredus-module:
@@ -43,7 +41,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Create Release
         run: |
-          gh release create ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Release"
+          gh release create ${{ github.event.release.tag_name }} --notes "${{ github.event.release.body }}" --title "${{ github.event.release.name }} by ${{ github.event.release.author.login }}"
 
 
   delivery-module:
@@ -62,5 +60,5 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Create Release
         run: |
-          gh release create ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Release"
+          gh release create ${{ github.event.release.tag_name }} --notes "${{ github.event.release.body }}" --title "${{ github.event.release.name }} by ${{ github.event.release.author.login }}"
 
