@@ -24,7 +24,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Create Release
         run: |
-          gh release create ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions."
+          gh release create ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Release"
 
 
   alfredus-module:
@@ -43,7 +43,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Create Release
         run: |
-          gh release create ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions."
+          gh release create ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Release"
 
 
   delivery-module:
@@ -62,5 +62,5 @@ jobs:
           token: ${{ secrets.TOKEN }}
       - name: Create Release
         run: |
-          gh release create ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions."
+          gh release create ${{ github.event.release.tag_name }} --notes "Created from GitHub Actions." --title "New Release"
 
